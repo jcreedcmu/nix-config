@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -99,6 +99,7 @@
   wget
   emacs
   gnome3.gnome-terminal
+  git
   ];
 
   # gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
