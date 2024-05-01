@@ -50,12 +50,7 @@
     ".site-lisp/notes-mode.el".source = emacs/notes-mode.el;
   };
 
-  # Notes on emacs config:
-  # I needed to install
-  # - paredit
-  # - exec-path-from-shell
-  # for the init file to even finish
-  # I also imperatively installed
+  # I imperatively installed
   # - iosevka.ttc
   # in ~/.local/share/fonts
   # (per advice in https://nixos.wiki/wiki/Fonts)

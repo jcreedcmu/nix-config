@@ -8,9 +8,9 @@ messy --- one might say archaeologically layered --- ~.emacs~ file. I
 was inspired by [[https://github.com/patrickt/emacs][patrickt's org-mode literate configuration]] and am
 attempting to imitate its cleanliness.
 
-*Current status*: At least there is no longer a giant top-level
-section named "Misc", but there remain opportunities for better
-organization.
+*Current status*: This version is forked from the version I had in
+[another repo](https://github.com/jcreed/dot-emacs/). There remain
+opportunities for better organization.
 
 * How to use
 ** Basic use
@@ -26,8 +26,6 @@ HERE=/abspath/to/containing/dir
 ln -s $HERE/init.el ~/.emacs
 mkdir -p ~/.config/emacs
 ln -s $HERE/readme.org ~/.config/emacs/emacs-config.org
-mkdir -p ~/.config/i3
-ln -s $HERE/i3.config ~/.config/i3/config
 #+END_SRC
 
 ** Configuration variables
@@ -105,6 +103,7 @@ Set this variable so I can use it later in ~notes-mode.el~.
 This is mainly useful to make sure that whatever nvm has set as the
 current `node` executable is accessible from inside emacs.
 #+BEGIN_SRC emacs-lisp
+(use-package exec-path-from-shell :ensure t)
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
 ; (setq exec-path (append exec-path '("/usr/local/bin")))
@@ -737,6 +736,7 @@ All matching buffers will be marked for deletion."
 #+END_SRC
 ** Magit
 #+BEGIN_SRC emacs-lisp
+(use-package magit :ensure t)
 (defun jcreed-magit-copy-region-hunk ()
   (interactive)
   (when (magit-section-internal-region-p)
@@ -819,7 +819,7 @@ confused and it deletes my buffer. Instead I can execute
 * Programming Language Configuration
 ** Paredit & Other LISP
 #+BEGIN_SRC emacs-lisp
-
+(use-package paredit :ensure t)
 (autoload 'paredit-mode "paredit"
   "Turn on pseudo-structural editing of Lisp code."
   t)
