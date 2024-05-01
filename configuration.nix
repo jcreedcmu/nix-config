@@ -86,10 +86,9 @@
   users.users.jcreed = {
     isNormalUser = true;
     description = "Jason R";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
       firefox
-    #  thunderbird
     ];
   };
 
@@ -99,7 +98,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim 
+  vim
   wget
   emacs
   i3
@@ -109,7 +108,7 @@
   ];
 
   # gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-   
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
