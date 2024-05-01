@@ -19,7 +19,8 @@
   # environment.
   home.packages = with pkgs; [
     hello
-    ardour
+    dconf # this is crucial for actually applying gnome-terminal settings below!
+          # see https://github.com/nix-community/home-manager/issues/3113
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
@@ -58,4 +59,21 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.gnome-terminal = {
+     enable = true;
+     # this name needs to be a uuid
+     # see https://github.com/nix-community/home-manager/issues/3923
+     profile."b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
+        visibleName = "default";
+        audibleBell = false;
+	customCommand = "bash";
+	default = true;
+	font = "Monospace 10";
+     };
+     themeVariant = "dark";
+     showMenubar = false;
+   };
+
+
 }
