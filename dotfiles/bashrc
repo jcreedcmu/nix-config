@@ -9,6 +9,8 @@ alias chrome="google-chrome --allow-file-access-from-files"
 source ~/.git-completion.bash
 source ~/.git-prompt.bash
 
+export PATH=/home/jcreed/bin:${PATH}
+
 # https://github.com/fidian/ansi
 # 38;5 is set foreground color
 # 48;5 is set background color

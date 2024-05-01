@@ -34,6 +34,14 @@
     ".gitconfig".source = dotfiles/gitconfig;
     ".git-prompt.bash".source = dotfiles/git-prompt.bash;
     ".git-completion.bash".source = dotfiles/git-completion.bash;
+    ".config/i3/config".source = config/i3.config;
+    "bin/change-workspace.js".source = pkgs.substituteAll {
+      name = "change-workspace.js";
+      src = ./bin/change-workspace.js;
+      isExecutable = true;
+      node = "${pkgs.nodejs_21}/bin/node";
+    };
+
     
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
