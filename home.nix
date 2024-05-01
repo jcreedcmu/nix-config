@@ -41,29 +41,25 @@
       isExecutable = true;
       node = "${pkgs.nodejs_21}/bin/node";
     };
-
-    
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    ".site-lisp/location.el".text = ''
+    (setq location 'dell-laptop)
+    '';
+    "bin/tangle.pl".source = emacs/tangle.pl;
+    ".emacs".source = emacs/init.el;
+    ".config/emacs/emacs-config.org".source = emacs/readme.org;
+    ".site-lisp/notes-mode.el".source = emacs/notes-mode.el;
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. If you don't want to manage your shell through Home
-  # Manager then you have to manually source 'hm-session-vars.sh' located at
-  # either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/jcreed/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    EDITOR = "emacs";
-  };
+  # Notes on emacs config:
+  # I needed to install
+  # - paredit
+  # - exec-path-from-shell
+  # for the init file to even finish
+  # I also imperatively installed
+  # - iosevka.ttc
+  # in ~/.local/share/fonts
+  # (per advice in https://nixos.wiki/wiki/Fonts)
+  # even though there are less impure ways of doing that.
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -75,13 +71,11 @@
      profile."b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
         visibleName = "default";
         audibleBell = false;
-	customCommand = "bash";
-	default = true;
-	font = "Monospace 10";
+	      customCommand = "bash";
+	      default = true;
+	      font = "Monospace 12";
      };
      themeVariant = "dark";
      showMenubar = false;
    };
-
-
 }

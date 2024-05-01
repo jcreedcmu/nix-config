@@ -3,16 +3,17 @@
 	email = jcreed@gmail.com
 [alias]
         cim = commit -m
-        cima = commit --amend 
+        cima = commit --amend
         cm = commit -m
-        cma = commit --amend 
-        ci = commit 
+        cma = commit --amend
+        ci = commit
         co = checkout
 	b = branch
 	tl = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(black)%s%C(reset) %C(dim black)- %an%C(reset)%C(bold red)%d%C(reset)' --all
-	tlo = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(black)%s%C(reset) %C(dim black)- %an%C(reset)%C(bold red)%d%C(reset)' 
+	tlo = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(black)%s%C(reset) %C(dim black)- %an%C(reset)%C(bold red)%d%C(reset)'
 [core]
 	editor = emacs -nw
 [push]
 	default = current
-
+[status]
+	showUntrackedFiles = all
