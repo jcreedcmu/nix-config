@@ -21,7 +21,9 @@
     hello
     dconf # this is crucial for actually applying gnome-terminal settings below!
           # see https://github.com/nix-community/home-manager/issues/3113
+    nodejs_21
     openjdk
+    brightnessctl
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
