@@ -24,6 +24,8 @@
     nodejs_21
     openjdk
     brightnessctl
+    jq
+    silver-searcher
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
