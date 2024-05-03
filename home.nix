@@ -26,6 +26,7 @@
     brightnessctl
     jq
     silver-searcher
+    imagemagick
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
