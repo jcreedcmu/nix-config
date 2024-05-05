@@ -27,6 +27,7 @@
     jq
     silver-searcher
     imagemagick
+    unzip
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
