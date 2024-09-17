@@ -105,6 +105,7 @@
   sway
   gnome3.gnome-terminal
   git
+  gnumake
   ];
 
   # gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
