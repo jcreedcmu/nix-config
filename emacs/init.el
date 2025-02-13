@@ -22,11 +22,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'org-install)
+; (require 'org-install)
 
 (defvar init-dir
   (if load-file-name
-       (file-name-directory (file-truename load-file-name))
+      (file-name-directory (file-truename load-file-name))
     default-directory))
 
 (defun tangle-config ()

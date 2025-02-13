@@ -21,7 +21,7 @@
     hello
     dconf # this is crucial for actually applying gnome-terminal settings below!
           # see https://github.com/nix-community/home-manager/issues/3113
-    nodejs_21
+    nodejs_23
     openjdk
     brightnessctl
     jq
@@ -45,7 +45,7 @@
       name = "change-workspace.js";
       src = ./bin/change-workspace.js;
       isExecutable = true;
-      node = "${pkgs.nodejs_21}/bin/node";
+      node = "${pkgs.nodejs_23}/bin/node";
     };
     ".site-lisp/location.el".text = ''
     (setq location 'dell-laptop)

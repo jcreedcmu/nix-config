@@ -53,17 +53,18 @@
   # services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
-    xkbOptions = "ctrl:nocaps";
+    variant = "";
+    options = "ctrl:nocaps";
   };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
+  ## Enable sound with pipewire.
+  # sound.enable = true; # nixos 24.11 tells me this is deprecated
+
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -103,7 +104,7 @@
   emacs
   i3
   sway
-  gnome3.gnome-terminal
+  gnome-terminal
   git
   gnumake
   ];
@@ -122,7 +123,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh.enable = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
