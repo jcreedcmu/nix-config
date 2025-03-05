@@ -31,6 +31,7 @@
     silver-searcher
     imagemagick
     unzip
+    alsa-utils
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
